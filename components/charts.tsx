@@ -1,7 +1,7 @@
 'use client'; // This directive is used in Next.js to indicate a client component
 
 import React, { useEffect } from 'react';
-import { Chart } from 'chart.js/auto';
+import { Chart } from 'chart.js';
 
 const MyBarChart = () => {
   useEffect(() => {
