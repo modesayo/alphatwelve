@@ -548,17 +548,18 @@ interface NavItem {
         }, // Dark/Light mode toggle
       ];
       useEffect(() => {
-        const handleClickOutside = (event) => {
-          if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        const handleTouchStart = (event: TouchEvent) => {
+          if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             setIsOpen(false);
           }
         };
-      
-        document.addEventListener('mousedown', handleClickOutside);
+    
+        document.addEventListener('touchstart', handleTouchStart);
         return () => {
-          document.removeEventListener('mousedown', handleClickOutside);
+          document.removeEventListener('touchstart', handleTouchStart);
         };
       }, [dropdownRef]);
+    
     return (
       <div>
       <header className="flex fixed top-0 w-full z-10 justify-between items-center p-4 bg-gray-800 h-[64px] text-white">
