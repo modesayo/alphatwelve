@@ -1,5 +1,5 @@
 "use client";
-import React, { useState,useEffect, } from "react";
+import React, { useState } from "react";
 import Switch from "@mui/material/Switch";
 interface NavItem {
   id: number;

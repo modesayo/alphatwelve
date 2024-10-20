@@ -199,8 +199,6 @@ const EventList = () => {
     setFilteredEvents(filtered);
     setCurrentPage(1); // Reset to first page when searching
   };
-  const [sortKey, setSortKey] = useState<"name" | "date" | "status">("name");
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const sortEvents = (
     key: "name" | "date" | "status",
     order: "asc" | "desc"
