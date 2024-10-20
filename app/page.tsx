@@ -7,7 +7,7 @@ import EventList from "@/components/table";
 import BottomNavbar from "@/components/bottom_bar";
 import Header from "@/components/header";
 import { useState, useEffect } from "react";
-const homepage: React.FC = () => {
+const Homepage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const handleResize = () => {
@@ -65,4 +65,4 @@ const homepage: React.FC = () => {
     </>
   );
 };
-export default homepage;
+export default Homepage;
