@@ -584,7 +584,7 @@ const Header = () => {
                   <ModalComponent open={isModalOpen} onClose={handleCloseModal} />
       <header className="flex fixed top-0 w-full z-10 justify-between items-center p-4 bg22 border-b-[1px] h-[64px] text-white">
         <div className="text-xl font-bold">
-          <img src="logo.png"></img>
+          <img src="/logo.png"></img>
         </div>
 
         <div className="relative z-20">

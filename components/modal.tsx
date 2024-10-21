@@ -53,7 +53,7 @@ const ModalComponent: React.FC<ModalProps> = ({ open, onClose }) => {
                     <p className="px-[24px] txt py-[22px]">{eventData.description}</p>
                     <div className=" justify-between flex flex-col px-[24px] h-[156px]">
                        
-                        <img src="avatar group.png" alt="Group Avatar" className="w-[80px] h-[32px]" />
+                        <img src="/avatar group.png" alt="Group Avatar" className="w-[80px] h-[32px]" />
                         
                             <p className="txt">{eventData.speakers}</p>
                         
