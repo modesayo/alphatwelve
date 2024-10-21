@@ -4,9 +4,9 @@ import Image from 'next/image'
 const Card = () => {
   // Card component definition inside Dashboard
   const Cards = ({ header, value, change }: { header: string; value: string; change: number }) => (
-    <div className="bg-white border-[1px] border-[#F2F2F7] rounded-[2px] h-[88px] small-screen-only p-[16px] md:w-[260px] gap-[16px] ">
+    <div className="bg22 bd  rounded-[2px] h-[88px] small-screen-only p-[16px] md:w-[260px] gap-[16px] ">
           <div className="flex items-center mb-2"> {/* Flex container for header and image */}
-        <h2 className="font-semibold text-[#64748B] font-inter mb-0 mr-2">{header}</h2> {/* Remove bottom margin */}
+        <h2 className="font-semibold txt font-inter mb-0 mr-2">{header}</h2> {/* Remove bottom margin */}
         <Image 
           alt='Information Icon' 
           width={16} 

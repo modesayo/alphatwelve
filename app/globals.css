@@ -2,37 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-    font-family: 'MyFont'; /* Define a name for your font */
-    src: url('./fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype'); /* Path to your font file */
-    font-weight: normal; /* Define the weight */
-    font-style: normal; /* Define the style */
-  }
-  .disabled-button {
-  opacity: 0.5; /* Make it look faded */
-  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
-  background-color: #e0e0e0; /* Optional: change background color */
-  color: #a0a0a0; /* Optional: change text color */
+    font-family: 'MyFont'; 
+    src: url('./fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal; 
 }
+
+.disabled-button {
+    opacity: 0.5; 
+    cursor: not-allowed; 
+    background-color: #e0e0e0; 
+    color: #a0a0a0; 
+}
+
 #myChart {
-  width: 474px;
-  height: 240px;
+    width: 474px;
+    height: 240px;
 }
+
+.trans {
+    z-index: 144; 
+}
+
+.tran {
+    position: relative; 
+}
+
 @media (max-width: 768px) {
-  .small-screen-only {
-    margin-left: 16px; /* equivalent to mx-16 */
-  margin-right: 16px; /* or any specific style you want */
+    .small-screen-only {
+        margin-left: 16px; 
+        margin-right: 16px; 
+    }
+    #myChart {
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 12px !important;
+    }
+    .fullw {
+        width: 100% !important;
+    }
+    .mobilem {
+        margin-bottom: 113px !important;  
+    }
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --color-bg: white;
+    --border: 1px solid #F2F2F7; /* Add border style */
+    --text1-color: #64748B;
+    --color-bga: #F1F5F9;
+    --texts-color: #484554;
+    --border1: 1px solid  #F2F2F7;
+    --text-color1: white;
   }
-  #myChart {
-    width: 100% !important;
-    height: auto !important;
-    margin-top: 12px !important;
-  }
-  .fullw{
-    width: 100% !important;
-  }
-  .mobilem{
-    margin-bottom: 113px !important;  
-  }
+
+[data-theme="dark"] {
+    --background-color: #383544;
+    --text-color1: black;
+    --text-color: white;
+    --color-bg: #484554;
+    --border: none; 
+    --border1: none;/* No border in dark mode */
+    --text1-color: white;
+    --text2-color: #8576FF;
+    --color-bga: #6A6676;
+    --texts-color: #FCF7FF; /* Corrected variable name */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.txt2{
+  color :var(--text-color1)
+}
+.bg6{
+  stroke: var(--texts-color)
+}
+.bg3{
+  background-color: var(--color-bga);
+}
+.bg22 {
+    background-color: var(--color-bg);
+}
+.bg2{
+  stroke: var(--text-color)
+}
+.bg4{
+  color : var(--text2-color);
+}
+.bg{
+  background-color: var(--background-color);
+}
+.bd {
+    border: var(--border); /* Use variable for border */
+}
+.bd1 {
+  border-right: var(--border1); /* Use variable for border */
+}
+.txt1 {
+  color: var(--text-color);
+}
+.txt {
+    color: var(--text1-color);
 }

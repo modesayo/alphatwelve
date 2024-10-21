@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Switch from "@mui/material/Switch";
+import ModalComponent from "./modal";
 interface NavItem {
   id: number;
   name: string;
@@ -15,7 +16,33 @@ const Sidebars: React.FC<{
   isCollapsed: boolean;
   toggleSidebar: () => void;
 }> = ({ isCollapsed, toggleSidebar }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [openModal, setOpenModal] = useState(true);
+  const handleOpen = () => setOpenModal(true);
+    const handleClose = () => setOpenModal(false);
+    const handleEdit = () => {
+        // Handle edit logic here
+        console.log("Edit clicked");
+    };
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        // Load the saved theme on component mount
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    }, []);
+
+    const toggleDarkMode = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
+
   const navItems: NavItem[] = [
     {
       id: 1,
@@ -268,6 +295,8 @@ const Sidebars: React.FC<{
           />
         </svg>
       ),
+      
+      action : handleOpen
     },
     {
       id: 6,
@@ -409,16 +438,16 @@ const Sidebars: React.FC<{
       path: "#",
       icon:  null,
       icon1: null,
-      action: () => setIsDarkMode(!isDarkMode),
+      action: toggleDarkMode, // Use the toggleDarkMode function directly
       render: () => (
         <div className="flex items-center">
           <Switch
-            checked={isDarkMode}
+            checked={theme === 'dark'}
             onChange={toggleDarkMode}
             color="primary"
           />
           <span className="ml-2">
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
+            {theme === 'light' ? "Light Mode" : "Dark Mode"}
           </span>
         </div>
       ),
@@ -573,28 +602,25 @@ const Sidebars: React.FC<{
             </svg>
           </div>
           <div className="ml-4">
-            <h1 className="text-gray-500 text-lg font-medium">Rudra Devi</h1>
-            <p className="text-gray-400 text-sm">rudra.deviK@gmail.com</p>
+            <h1 className="txt text-lg font-medium">Rudra Devi</h1>
+            <p className="txt text-sm">rudra.deviK@gmail.com</p>
           </div>
         </div>
       ),
     }, // Dark/Light mode toggle
   ];
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+ 
 
   return (
     <div
-      className={`flex fixed top-0 left-0 h-[100%] border-r ${
+      className={`flex fixed top-0 bg22 left-0 h-[100%] bd1 ${
         isCollapsed ? "w-[64px]" : "w-[240px]"
-      } flex-col ${
-        isDarkMode ? "bg-gray-800 text-white" : "bg-transparent text-black"
-      } transition-colors duration-300`}
+      } flex-col transition-colors duration-300`}
     >
-      <div className="py-4 ml-auto mr-2 bg-gray-200 flex justify-between items-center">
-        <h2 className="">Menu</h2>
+<ModalComponent open={openModal} onClose={handleClose}/>
+      <div className="flex mt-4 ml-4 items-center">
+        <img src="logo.png"/>
       </div>
       <ul className="mt-4">
         {navItems.map((item) => (

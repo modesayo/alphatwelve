@@ -26,17 +26,17 @@ const Homepage: React.FC = () => {
     <>
       {isMobile ? (
         <>
-        <Header/>
-          <div className="space-y-4">
+          <Header />
+          <div className="space-y-4 mt-[64px]">
             <h1 className="text-2xl mb-[12px]  mx-[16px] mt-[40px] md:mx-0 ">
-              Welcome to the App!
+              Welcome! here’s your summary
             </h1>
             <Card />
             <h1 className="mt-[22px] h-[12px] mx-[16px] text-[18px] font-medium">
-                Event Registrations per month
-              </h1>
+              Event Registrations per month
+            </h1>
             <MyBarChart />
-            <Portfolio/>
+            <Portfolio />
             <EventList />
             <BottomNavbar />
           </div>
@@ -46,7 +46,9 @@ const Homepage: React.FC = () => {
           <div className="flex">
             <Sidebar />
             <div className="flex-1 bg-transparent ml-[268px]">
-              <h1 className="text-2xl mt-[40px]">Welcome to the App!</h1>
+              <h1 className="text-2xl mt-[40px]">
+                Welcome! here’s your summary
+              </h1>
               <div className="flex mt-[24px] justify-between">
                 <Card />
               </div>

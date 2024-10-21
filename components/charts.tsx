@@ -59,7 +59,7 @@ const MyBarChart = () => {
   }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
-    <div className='border-[1px] small-screen-only rounded-md border-[#F2F2F7] md:h-[320px] p-[40px]'>
+    <div className='bg22 bd small-screen-only rounded-md md:h-[320px] p-[40px]'>
       <canvas id="myChart" width="474" height="240"></canvas>
     </div>
   );
