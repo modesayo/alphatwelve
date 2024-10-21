@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Switch } from "@mui/material";
 import ModalComponent from "./modal";
-import Image from "next/image";
 
 interface NavItem {
   id: number;
