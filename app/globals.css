@@ -39,9 +39,10 @@
       color: #FFFFFF;
     }
     .gress{
-      background-color: #3B82F6 !important; 
-      height: 40px !important;        
+      background-color: #3B82F6 !important;       
       color: #FFFFFF;
+      white-space: nowrap; /* Prevents text from wrapping */
+      overflow: hidden;
 
     }
     #myChart {
