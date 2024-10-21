@@ -398,7 +398,6 @@ const logo = '/Logo.jpg'
         <div className="flex items-center">
           <Switch
             checked={theme === 'dark'}
-            onChange={toggleDarkMode}
             color="primary"
           />
           <span className="inline-flex txt1 items-center">
