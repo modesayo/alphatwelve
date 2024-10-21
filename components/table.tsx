@@ -422,7 +422,7 @@ const EventList = () => {
                 <TableRow>
                   <TableCell className="txt" sx={{ padding: 0, border: 'none' }} colSpan={2}>
                     <Collapse in={openRows[index]} timeout="auto" unmountOnExit>
-                      <div className="bg22 txt h-[52px] items-center w-full p-5" style={{ display: "flex", justifyContent: "space-between" }}>
+                      <div className="bg txt h-[52px] items-center w-full p-5" style={{ display: "flex", justifyContent: "space-between" }}>
                         <div className="pl-[16px] txt">{event.speaker}</div>
                         <div className="pr-[16px] txt">{event.date}</div>
                       </div>
