@@ -19,10 +19,6 @@ const Sidebars: React.FC<{
   const [openModal, setOpenModal] = useState(true);
   const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
-    const handleEdit = () => {
-        // Handle edit logic here
-        console.log("Edit clicked");
-    };
     const [theme, setTheme] = useState('light');
 
     useEffect(() => {

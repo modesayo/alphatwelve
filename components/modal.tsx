@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Box, Typography, Button } from "@mui/material";
+import { Modal} from "@mui/material";
 
 interface ModalProps {
   open: boolean;
