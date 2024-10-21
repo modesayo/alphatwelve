@@ -14,27 +14,12 @@ interface NavItem {
 }
 const Header = () => {
   const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    // Load the saved theme on component mount
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    } else {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
-  }, [theme]); // Add theme to the dependency array
-  useEffect(() => {
-    // Update localStorage with the new theme value
-    localStorage.setItem('theme', theme);
-  }, [theme]); // Add theme to the dependency array
-    const toggleDarkMode = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    };
+  const toggleDarkMode = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+};
 const logo = '/Logo.jpg'
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleCloseModal = () => setIsModalOpen(false);
