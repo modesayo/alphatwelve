@@ -60,7 +60,7 @@ const ModalComponent: React.FC<ModalProps> = ({ open, onClose }) => {
                             <p className="txt">{eventData.attendees}</p>
                     </div>
                     <div className="flex h-[174px] flex-col md:flex-row md:h-[84px] md:px-[24px] p-[24px] bg-[#F8FAFC] justify-between items-center">
-                        <button className="bg-white txt2 font-thin border-[1px] h-[36px] w-full md:w-[70px] px-4 rounded">
+                        <button className="bg-white text-black font-thin border-[1px] h-[36px] w-full md:w-[70px] px-4 rounded">
                             Edit
                         </button>
                         

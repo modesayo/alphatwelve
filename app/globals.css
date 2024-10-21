@@ -34,6 +34,16 @@
         margin-left: 16px; 
         margin-right: 16px; 
     }
+    .segg {
+      background-color: #10B981 ;
+      color: #FFFFFF;
+    }
+    .gress{
+      background-color: #3B82F6;
+      height: 40px;        
+      color: #FFFFFF;
+
+    }
     #myChart {
         width: 100% !important;
         height: auto !important;
@@ -57,6 +67,10 @@
     --texts-color: #484554;
     --border1: 1px solid  #F2F2F7;
     --text-color1: white;
+    --colori : transparent;
+    --colori1: #D1FAE5;
+    --lopo : transparent; 
+    --lopo : #DBEAFE
   }
 
 [data-theme="dark"] {
@@ -69,12 +83,20 @@
     --text1-color: white;
     --text2-color: #8576FF;
     --color-bga: #6A6676;
-    --texts-color: #FCF7FF; /* Corrected variable name */
+    --texts-color: #FCF7FF; 
+    --colori : 2px  solid #10B981;
+    --colori1 : transparent;
+    --lopo: 2px solid #3B82F6;
+    --lopo1 : transparent;
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+}
+.polos{
+  border : var(--lopo);
+  background-color: var(--lopo1);
 }
 .txt2{
   color :var(--text-color1)
@@ -93,6 +115,10 @@ body {
 }
 .bg4{
   color : var(--text2-color);
+}
+.bg77{
+  border : var(--colori);
+  background-color: var(--colori1);
 }
 .bg{
   background-color: var(--background-color);

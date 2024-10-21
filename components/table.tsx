@@ -98,12 +98,12 @@ interface StatusBadgeProps {
 
 const StatusBadge: React.FC<StatusBadgeProps> = ({ status , showDot = true  }) => {
   const statusClasses = {
-    Completed: "md:bg-[#D1FAE5] md:text-[#10B981]",
-    "In Progress": "md:bg-[#DBEAFE] md:text-[#3B82F6]",
+    Completed: " md:bg77 text-[#10B981]",
+    "In Progress": " md:polos text-[#3B82F6]",
   };
 const mobile = {
-  Completed: "bg-[#10B981] text-white",
-  "In Progress": "bg-[#3B82F6] w-[90px] h-[40px] text-white",
+  Completed: "segg",
+  "In Progress": "gress",
 
 }
   const statusdot = {
