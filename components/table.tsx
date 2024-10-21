@@ -409,22 +409,22 @@ const EventList = () => {
             {paginatedEvents.map((event, index) => (
               <React.Fragment key={index}>
                 <TableRow className="bg22" sx={{ "& > *": { borderBottom: "none" } }} onClick={() => handleRowClick(index)}>
-                  <TableCell className="flex" component="th" scope="row" sx={{ border: 'none' }}>
+                  <TableCell className="flex txt " component="th" scope="row" sx={{ border: 'none' }}>
                     <span style={{ marginLeft: 8 }}>
                       {openRows[index] ? (<ArrowDown/>) : (<Arrowup/>)}
                     </span>
                     {event.name}
                   </TableCell>
-                  <TableCell align="right" sx={{ border: 'none' }}>
+                  <TableCell align="right" className="txt" sx={{ border: 'none' }}>
                     <StatusBadge showDot={false} status={event.status} />
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell sx={{ padding: 0, border: 'none' }} colSpan={2}>
+                  <TableCell className="txt" sx={{ padding: 0, border: 'none' }} colSpan={2}>
                     <Collapse in={openRows[index]} timeout="auto" unmountOnExit>
-                      <div className="bg-[#F5F5F5] h-[52px] items-center w-full p-5" style={{ display: "flex", justifyContent: "space-between" }}>
-                        <div className="pl-[16px]">{event.speaker}</div>
-                        <div className="pr-[16px]">{event.date}</div>
+                      <div className="bg-[#F5F5F5] txt h-[52px] items-center w-full p-5" style={{ display: "flex", justifyContent: "space-between" }}>
+                        <div className="pl-[16px] txt">{event.speaker}</div>
+                        <div className="pr-[16px] txt">{event.date}</div>
                       </div>
                     </Collapse>
                   </TableCell>
