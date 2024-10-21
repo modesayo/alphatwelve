@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Switch } from "@mui/material";
 import ModalComponent from "./modal";
 import Image from "next/image";
+
 interface NavItem {
   id: number;
   name: string;
@@ -35,7 +36,7 @@ const Header = () => {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     };
-
+const logo = '/logo.jpg'
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleCloseModal = () => setIsModalOpen(false);
 
@@ -585,7 +586,7 @@ const Header = () => {
                   <ModalComponent open={isModalOpen} onClose={handleCloseModal} />
       <header className="flex fixed top-0 w-full z-10 justify-between items-center p-4 bg22 border-b-[1px] h-[64px] text-white">
         <div className="text-xl font-bold">
-          <Image alt="gg" src="/logo.jpg"/>
+          <img alt="gg" src={logo}/>
         </div>
 
         <div className="relative z-20">
