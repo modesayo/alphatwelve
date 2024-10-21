@@ -99,10 +99,10 @@ body {
   background-color: var(--lopo1);
 }
 .txt2{
-  color :var(--text-color1)
+  color :var(--text-color1);
 }
 .bg6{
-  stroke: var(--texts-color)
+  stroke: var(--texts-color);
 }
 .bg3{
   background-color: var(--color-bga);
@@ -111,7 +111,7 @@ body {
     background-color: var(--color-bg);
 }
 .bg2{
-  stroke: var(--text-color)
+  stroke: var(--text-color);
 }
 .bg4{
   color : var(--text2-color);
@@ -133,5 +133,5 @@ body {
   color: var(--text-color);
 }
 .txt {
-    color: var(--text1-color);
+    color: var(--text1-color) !important;
 }
