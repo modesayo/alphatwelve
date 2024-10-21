@@ -616,7 +616,7 @@ const Sidebars: React.FC<{
     >
 <ModalComponent open={openModal} onClose={handleClose}/>
       <div className="flex mt-4 ml-4 items-center">
-        <img src="/logo.jpg"/>
+        <img src="/Logo.jpg"/>
       </div>
       <ul className="mt-4">
         {navItems.map((item) => (

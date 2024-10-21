@@ -35,7 +35,7 @@ const Header = () => {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     };
-const logo = '/logo.jpg'
+const logo = '/Logo.jpg'
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleCloseModal = () => setIsModalOpen(false);
 
