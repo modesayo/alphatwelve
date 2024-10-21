@@ -144,12 +144,12 @@ const mobile = {
 };
 const Arrowup = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="#334155" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10.75 8.75L14.25 12L10.75 15.25" className="bg6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 const ArrowDown = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.25 10.75L12 14.25L8.75 10.75" stroke="#334155" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M15.25 10.75L12 14.25L8.75 10.75" className="bg6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
 );
@@ -409,7 +409,7 @@ const EventList = () => {
             {paginatedEvents.map((event, index) => (
               <React.Fragment key={index}>
                 <TableRow className="bg22" sx={{ "& > *": { borderBottom: "none" } }} onClick={() => handleRowClick(index)}>
-                  <TableCell className="flex txt " component="th" scope="row" sx={{ border: 'none' }}>
+                  <TableCell className="flex flex-row txt " component="th" scope="row" sx={{ border: 'none' }}>
                     <span style={{ marginLeft: 8 }}>
                       {openRows[index] ? (<ArrowDown/>) : (<Arrowup/>)}
                     </span>
