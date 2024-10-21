@@ -32,7 +32,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => (
 );
 
 const PrevButton: React.FC<ButtonProps> = ({ onClick }) => (
-  <button onClick={onClick} className="bg-white rounded-full p-2 transition duration-300 hover:bg-gray-300 z-10">
+  <button onClick={onClick} className="bg-white rounded-full p-2 transition duration-300 hover:bg-gray-300 z-0">
     <svg width="6" height="6" viewBox="0 0 4 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2.625 1.375L0.875 3L2.625 4.625" stroke="#334155" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -40,7 +40,7 @@ const PrevButton: React.FC<ButtonProps> = ({ onClick }) => (
 );
 
 const NextButton: React.FC<ButtonProps> = ({ onClick }) => (
-  <button onClick={onClick} className="bg-white rounded-full p-2 transition duration-300 hover:bg-gray-300 z-10">
+  <button onClick={onClick} className="bg-white rounded-full p-2 transition duration-300 hover:bg-gray-300 z-0">
     <svg width="6" height="6" viewBox="0 0 4 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1.375 1.375L3.125 3L1.375 4.625" stroke="#334155" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -60,12 +60,12 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="mx-[16px] md:mx-0 tran h-80 flex flex-col items-center">
-      <div className="w-full h-full"> {/* Wrapper for buttons and image */}
+      <div className="w-full relative h-full"> {/* Wrapper for buttons and image */}
         <WorkCard work={works[currentIndex]} />
-        <div className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 left-2 transform -translate-y-1/2 ">
           <PrevButton onClick={handlePrev} />
         </div>
-        <div className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 right-2 transform -translate-y-1/2">
           <NextButton onClick={handleNext} />
         </div>
         <div className="bg-transparent bottom-0 absolute w-full h-[40%] flex items-center justify-center">
@@ -78,7 +78,7 @@ const Portfolio: React.FC = () => {
         </h2>
       </div>
     </div>
-        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex z-10">
+        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex ">
           {works.map((_, index) => (
             <div key={index} className={`w-3 h-1 rounded-full ${index === currentIndex ? "bg-white" : "bg-gray-500"} mx-1 transition-colors duration-300`} />
           ))}
