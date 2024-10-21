@@ -92,20 +92,21 @@ const eventsData: Event[] = [
 // Define props for StatusBadge component
 interface StatusBadgeProps {
   status: "Completed" | "In Progress";
-  showDot:  boolean;
-
+  showDot: boolean;
 }
 
-const StatusBadge: React.FC<StatusBadgeProps> = ({ status , showDot = true  }) => {
+const StatusBadge: React.FC<StatusBadgeProps> = ({
+  status,
+  showDot = true,
+}) => {
   const statusClasses = {
     Completed: " bg77 text-[#10B981]",
     "In Progress": " polos text-[#3B82F6]",
   };
-const mobile = {
-  Completed: "segg",
-  "In Progress": "gress",
-
-}
+  const mobile = {
+    Completed: "segg",
+    "In Progress": "gress",
+  };
   const statusdot = {
     Completed: (
       <svg
@@ -133,25 +134,47 @@ const mobile = {
   };
   return (
     <Badge
-    className={`px-2 py-1 items-center rounded-full text-sm ${mobile[status]} ${statusClasses[status]}`}
-    sx={{position: 'static'}}
+      className={`px-2 py-1 items-center rounded-full text-sm ${mobile[status]} ${statusClasses[status]}`}
+      sx={{ position: "static" }}
     >
-      
-      {showDot && statusdot[status]} 
+      {showDot && statusdot[status]}
       {status}
     </Badge>
   );
 };
 const Arrowup = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.75 8.75L14.25 12L10.75 15.25" className="bg6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.75 8.75L14.25 12L10.75 15.25"
+      className="bg6"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 const ArrowDown = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.25 10.75L12 14.25L8.75 10.75" className="bg6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
-
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15.25 10.75L12 14.25L8.75 10.75"
+      className="bg6"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
 );
 const EventList = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -288,228 +311,275 @@ const EventList = () => {
 
   return (
     <div className="mobilem">
-    <div className=" mx-auto  mobilem mt-4">
-      <h2 className="text-2xl p-4 font-bold mb-4">Event List</h2>
-      <div className="flex flex-col  mb-4">
-        <div className="flex p-4 flex-col md:flex-row gap-[8px]">
-          <input
-            type="search"
-            className="px-4 h-[36px] bg22 bd py-2 rounded"
-            placeholder="Search events"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          <select
-            id="my-dropdown"
-            value={selectedOption}
-            onChange={handleSelectChange}
-            className=" h-[36px] bd border bg22 rounded"
-          >
-            <option value="">Name</option>
-            <option value="option1">asc</option>
-            <option value="option2">desc</option>
-          </select>
-          <select
-            id="my-dropdown"
-            value={selectedOption}
-            onChange={handleSelectChange}
-            className=" h-[36px] bd border bg22 rounded"
-          >
-            <option value="">Date</option>
-            <option value="option3">asc</option>
-            <option value="option4">desc</option>
-          </select>
-          <select
-            id="my-dropdown"
-            value={selectedOption}
-            onChange={handleSelectChange}
-            className=" h-[36px] bd border bg22 rounded"
-          >
-            <option value="">Status</option>
-            <option value="option5">asc</option>
-            <option value="option6">desc</option>
-          </select>
-          <h1 className="my-auto md:ml-auto font-semibold">
-            Displaying 100 results
-          </h1>
-
-          <div className="md:gap-[8px] justify-between  flex ">
-            <h1 className="flex items-center">Sort :</h1>
+      <div className=" mx-auto  mobilem mt-4">
+        <h2 className="text-2xl p-4 font-bold mb-4">Event List</h2>
+        <div className="flex flex-col  mb-4">
+          <div className="flex p-4 flex-col md:flex-row gap-[8px]">
+            <input
+              type="search"
+              className="px-4 h-[36px] bg22 bd py-2 rounded"
+              placeholder="Search events"
+              value={searchTerm}
+              onChange={handleSearch}
+            />
             <select
               id="my-dropdown"
               value={selectedOption}
               onChange={handleSelectChange}
-              className="items-center bd flex border h-[36px] bg22 text-center  rounded"
+              className=" h-[36px] bd border bg22 rounded"
             >
-              <option value="">Most Recent</option>
-              <option value="option1">Asc</option>
-              <option value="option2">Desc</option>
+              <option value="">Name</option>
+              <option value="option1">asc</option>
+              <option value="option2">desc</option>
+            </select>
+            <select
+              id="my-dropdown"
+              value={selectedOption}
+              onChange={handleSelectChange}
+              className=" h-[36px] bd border bg22 rounded"
+            >
+              <option value="">Date</option>
+              <option value="option3">asc</option>
+              <option value="option4">desc</option>
+            </select>
+            <select
+              id="my-dropdown"
+              value={selectedOption}
+              onChange={handleSelectChange}
+              className=" h-[36px] bd border bg22 rounded"
+            >
+              <option value="">Status</option>
+              <option value="option5">asc</option>
+              <option value="option6">desc</option>
+            </select>
+            <h1 className="my-auto md:ml-auto font-semibold">
+              Displaying 100 results
+            </h1>
+
+            <div className="md:gap-[8px] justify-between  flex ">
+              <h1 className="flex items-center">Sort :</h1>
+              <select
+                id="my-dropdown"
+                value={selectedOption}
+                onChange={handleSelectChange}
+                className="items-center bd flex border h-[36px] bg22 text-center  rounded"
+              >
+                <option value="">Most Recent</option>
+                <option value="option1">Asc</option>
+                <option value="option2">Desc</option>
+              </select>
+            </div>
+            <div className="md:gap-[8px] justify-between  flex ">
+              <div className="flex justify-center items-center w-[36px] h-[36px] bg22 bd">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="bg2"
+                >
+                  <path d="M10.4166 5.83333C10.4166 6.06345 10.2301 6.25 9.99998 6.25C9.76986 6.25 9.58331 6.06345 9.58331 5.83333C9.58331 5.60321 9.76986 5.41666 9.99998 5.41666C10.2301 5.41666 10.4166 5.60321 10.4166 5.83333Z" />
+                  <path d="M10.4166 10C10.4166 10.2301 10.2301 10.4167 9.99998 10.4167C9.76986 10.4167 9.58331 10.2301 9.58331 10C9.58331 9.76988 9.76986 9.58333 9.99998 9.58333C10.2301 9.58333 10.4166 9.76988 10.4166 10Z" />
+                  <path d="M10.4166 14.1667C10.4166 14.3968 10.2301 14.5833 9.99998 14.5833C9.76986 14.5833 9.58331 14.3968 9.58331 14.1667C9.58331 13.9365 9.76986 13.75 9.99998 13.75C10.2301 13.75 10.4166 13.9365 10.4166 14.1667Z" />
+                </svg>
+              </div>
+              <button
+                className="px-4 bd  h-[36px] flex items-center justify-between py-2 bg22 rounded "
+                onClick={handleExportToCSV}
+              >
+                {" "}
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ marginRight: "8px" }}
+                  className="bg2"
+                >
+                  <path
+                    d="M1.16663 7.83333V8.83333C1.16663 9.9379 2.06206 10.8333 3.16663 10.8333H8.83329C9.93786 10.8333 10.8333 9.9379 10.8333 8.83333V7.83333M5.99996 7.5V1.16666M5.99996 7.5L3.83329 5.16666M5.99996 7.5L8.16663 5.16666"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                Export
+              </button>
+            </div>
+          </div>
+        </div>
+        {isMobile ? (
+          <TableContainer>
+            <Table sx={{ borderCollapse: "collapse", padding: "0px" }}>
+              {" "}
+              {/* Ensure borders are collapsed */}
+              <TableHead className="bg3">
+                <TableRow>
+                  <TableCell className="" sx={{ border: "none" }}>
+                    Event Name
+                  </TableCell>
+                  <TableCell className="" sx={{ border: "none" }}>
+                    Status
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {paginatedEvents.map((event, index) => (
+                  <React.Fragment key={index}>
+                    <TableRow
+                      className="bg22"
+                      sx={{ "& > *": { borderBottom: "none" } }}
+                      onClick={() => handleRowClick(index)}
+                    >
+                      <TableCell
+                        className=" txt "
+                        component="th"
+                        scope="row"
+                        sx={{ border: "none" }}
+                      >
+                        <div className=" flex flex-row ">
+                          <span style={{ marginLeft: 8 }}>
+                            {openRows[index] ? <ArrowDown /> : <Arrowup />}
+                          </span>
+
+                          {event.name}
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        align="right"
+                        className="txt"
+                        sx={{ border: "none" }}
+                      >
+                        <StatusBadge showDot={false} status={event.status} />
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        className="txt"
+                        sx={{ padding: 0, border: "none" }}
+                        colSpan={2}
+                      >
+                        <Collapse
+                          in={openRows[index]}
+                          timeout="auto"
+                          unmountOnExit
+                        >
+                          <div
+                            className="bg txt h-[52px] items-center w-full p-5"
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <div className="pl-[16px] txt">{event.speaker}</div>
+                            <div className="pr-[16px] txt">{event.date}</div>
+                          </div>
+                        </Collapse>
+                      </TableCell>
+                    </TableRow>
+                  </React.Fragment>
+                ))}
+              </TableBody>
+            </Table>
+            {/* Pagination component */}
+            {/* Add pagination buttons here */}
+          </TableContainer>
+        ) : (
+          <TableContainer>
+            <Table sx={{ borderCollapse: "collapse" }}>
+              {" "}
+              {/* Collapse borders to eliminate gaps */}
+              <TableHead className="bg3 txt">
+                <TableRow>
+                  <TableCell className="txt" sx={{ border: "none" }}>
+                    Event Name
+                  </TableCell>
+                  <TableCell className="txt" sx={{ border: "none" }}>
+                    Date
+                  </TableCell>
+                  <TableCell className="txt" sx={{ border: "none" }}>
+                    Speaker
+                  </TableCell>
+                  <TableCell className="txt" sx={{ border: "none" }}>
+                    Status
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {paginatedEvents.map((event, index) => (
+                  <TableRow
+                    key={index}
+                    className="bg22 txt"
+                    sx={{ "& > *": { borderBottom: "none" }, border: "none" }}
+                  >
+                    <TableCell className="txt" sx={{ border: "none" }}>
+                      {event.name}
+                    </TableCell>
+                    <TableCell className="txt" sx={{ border: "none" }}>
+                      {event.date}
+                    </TableCell>
+                    <TableCell className="txt" sx={{ border: "none" }}>
+                      {event.speaker}
+                    </TableCell>
+                    <TableCell className="txt" sx={{ border: "none" }}>
+                      <StatusBadge showDot={true} status={event.status} />
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+        <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center space-x-6">
+            <button
+              className={`px-3 py-1 bg22 rounded ${
+                currentPage == 1 ? "disabled-button" : ""
+              }`}
+              onClick={() => handlePagination("previous")}
+              disabled={currentPage == 1}
+            >
+              <FontAwesomeIcon className="bg4" icon={faChevronLeft} />
+            </button>
+            {pages.map((page, index) => (
+              <button
+                key={index}
+                className={`gap-[16px] mx-4 flex justify-center ${
+                  page === currentPage
+                    ? "bg-[#8576FF] w-[24px] h-[24px] text-white rounded-full"
+                    : "bg-transparent"
+                }`}
+                onClick={() => handlePagination(page)}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              className={`px-3 py-1 bd bg22 rounded ${
+                currentPage === totalPages ? "disabled-button" : ""
+              }`}
+              onClick={() => handlePagination("next")}
+              disabled={currentPage === totalPages}
+            >
+              <FontAwesomeIcon className="bg4" icon={faChevronRight} />
+            </button>
+          </div>
+          <div className="">
+            Show:
+            <select
+              className="ml-2 bg-transparent border-[1px] rounded"
+              value={rowsPerPage}
+              onChange={handleRowsPerPageChange}
+            >
+              <option value={10}>10 rows</option>
+              <option value={20}>20 rows</option>
+              <option value={50}>50 rows</option>
             </select>
           </div>
-          <div className="md:gap-[8px] justify-between  flex ">
-            <div className="flex justify-center items-center w-[36px] h-[36px] bg22 bd">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="bg2"
-              >
-                <path
-                  d="M10.4166 5.83333C10.4166 6.06345 10.2301 6.25 9.99998 6.25C9.76986 6.25 9.58331 6.06345 9.58331 5.83333C9.58331 5.60321 9.76986 5.41666 9.99998 5.41666C10.2301 5.41666 10.4166 5.60321 10.4166 5.83333Z"
-                 
-                />
-                <path
-                  d="M10.4166 10C10.4166 10.2301 10.2301 10.4167 9.99998 10.4167C9.76986 10.4167 9.58331 10.2301 9.58331 10C9.58331 9.76988 9.76986 9.58333 9.99998 9.58333C10.2301 9.58333 10.4166 9.76988 10.4166 10Z"
-                  
-                />
-                <path
-                  d="M10.4166 14.1667C10.4166 14.3968 10.2301 14.5833 9.99998 14.5833C9.76986 14.5833 9.58331 14.3968 9.58331 14.1667C9.58331 13.9365 9.76986 13.75 9.99998 13.75C10.2301 13.75 10.4166 13.9365 10.4166 14.1667Z"
-                 
-                />
-              </svg>
-            </div>
-            <button
-              className="px-4 bd  h-[36px] flex items-center justify-between py-2 bg22 rounded "
-              onClick={handleExportToCSV}
-            > <svg
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ marginRight: '8px' }} 
-            className="bg2"
-          >
-            <path
-              d="M1.16663 7.83333V8.83333C1.16663 9.9379 2.06206 10.8333 3.16663 10.8333H8.83329C9.93786 10.8333 10.8333 9.9379 10.8333 8.83333V7.83333M5.99996 7.5V1.16666M5.99996 7.5L3.83329 5.16666M5.99996 7.5L8.16663 5.16666"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-
-              Export
-             
-            </button>
-          </div>
         </div>
       </div>
-      {isMobile ? (
-        <TableContainer>
-        <Table sx={{ borderCollapse: 'collapse', padding: '0px' }}> {/* Ensure borders are collapsed */}
-          <TableHead className="bg3">
-            <TableRow>
-              <TableCell className="" sx={{ border: 'none' }}>Event Name</TableCell>
-              <TableCell className="" sx={{ border: 'none' }}>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {paginatedEvents.map((event, index) => (
-              <React.Fragment key={index}>
-                <TableRow className="bg22" sx={{ "& > *": { borderBottom: "none" } }} onClick={() => handleRowClick(index)}>
-                  <TableCell className="flex flex-row txt " component="th" scope="row" sx={{ border: 'none' }}>
-                    <span style={{ marginLeft: 8 }}>
-                      {openRows[index] ? (<ArrowDown/>) : (<Arrowup/>)}
-                    </span>
-                    {event.name}
-                  </TableCell>
-                  <TableCell align="right" className="txt" sx={{ border: 'none' }}>
-                    <StatusBadge showDot={false} status={event.status} />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="txt" sx={{ padding: 0, border: 'none' }} colSpan={2}>
-                    <Collapse in={openRows[index]} timeout="auto" unmountOnExit>
-                      <div className="bg txt h-[52px] items-center w-full p-5" style={{ display: "flex", justifyContent: "space-between" }}>
-                        <div className="pl-[16px] txt">{event.speaker}</div>
-                        <div className="pr-[16px] txt">{event.date}</div>
-                      </div>
-                    </Collapse>
-                  </TableCell>
-                </TableRow>
-              </React.Fragment>
-            ))}
-          </TableBody>
-        </Table>
-        {/* Pagination component */}
-        {/* Add pagination buttons here */}
-      </TableContainer>
-      ) : (
-        <TableContainer >
-        <Table sx={{ borderCollapse: 'collapse' }}> {/* Collapse borders to eliminate gaps */}
-          <TableHead className="bg3 txt">
-            <TableRow>
-              <TableCell className="txt" sx={{ border: 'none' }}>Event Name</TableCell>
-              <TableCell className="txt" sx={{ border: 'none' }}>Date</TableCell>
-              <TableCell className="txt" sx={{ border: 'none' }}>Speaker</TableCell>
-              <TableCell className="txt" sx={{ border: 'none' }}>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {paginatedEvents.map((event, index) => (
-              <TableRow key={index} className="bg22 txt" sx={{ "& > *": { borderBottom: "none" }, border: 'none' }}>
-                <TableCell className="txt" sx={{ border: 'none' }}>{event.name}</TableCell>
-                <TableCell className="txt" sx={{ border: 'none' }}>{event.date}</TableCell>
-                <TableCell className="txt" sx={{ border: 'none' }}>{event.speaker}</TableCell>
-                <TableCell className="txt" sx={{ border: 'none' }}>
-                  <StatusBadge showDot={true} status={event.status} />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      )}
-      <div className="flex items-center justify-between mt-4">
-        <div className="flex items-center space-x-6">
-          <button
-            className={`px-3 py-1 bg22 rounded ${
-              currentPage == 1 ? "disabled-button" : ""
-            }`}
-            onClick={() => handlePagination("previous")}
-            disabled={currentPage == 1}
-          >
-            <FontAwesomeIcon className="bg4" icon={faChevronLeft} />
-          </button>
-          {pages.map((page, index) => (
-            <button
-              key={index}
-              className={`gap-[16px] mx-4 flex justify-center ${
-                page === currentPage
-                  ? "bg-[#8576FF] w-[24px] h-[24px] text-white rounded-full"
-                  : "bg-transparent"
-              }`}
-              onClick={() => handlePagination(page)}
-            >
-              {page}
-            </button>
-          ))}
-          <button
-            className={`px-3 py-1 bd bg22 rounded ${
-              currentPage === totalPages ? "disabled-button" : ""
-            }`}
-            onClick={() => handlePagination("next")}
-            disabled={currentPage === totalPages}
-          >
-            <FontAwesomeIcon className="bg4" icon={faChevronRight} />
-          </button>
-        </div>
-        <div className="">
-          Show:
-          <select
-            className="ml-2 bg-transparent border-[1px] rounded"
-            value={rowsPerPage}
-            onChange={handleRowsPerPageChange}
-          >
-            <option value={10}>10 rows</option>
-            <option value={20}>20 rows</option>
-            <option value={50}>50 rows</option>
-          </select>
-        </div>
-      </div>
-    </div>
     </div>
   );
 };
