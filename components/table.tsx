@@ -288,10 +288,10 @@ const EventList = () => {
 
   return (
     <div className="mobilem">
-    <div className=" mx-auto  mobilem p-4 mt-4">
-      <h2 className="text-2xl font-bold mb-4">Event List</h2>
+    <div className=" mx-auto  mobilem mt-4">
+      <h2 className="text-2xl p-4 font-bold mb-4">Event List</h2>
       <div className="flex flex-col  mb-4">
-        <div className="flex flex-col md:flex-row gap-[8px]">
+        <div className="flex p-4 flex-col md:flex-row gap-[8px]">
           <input
             type="search"
             className="px-4 h-[36px] bg22 bd py-2 rounded"
@@ -398,8 +398,8 @@ const EventList = () => {
       </div>
       {isMobile ? (
         <TableContainer>
-        <Table sx={{ borderCollapse: 'collapse' }}> {/* Ensure borders are collapsed */}
-          <TableHead className="bg-[#F1F5F9]">
+        <Table sx={{ borderCollapse: 'collapse', padding: '0px' }}> {/* Ensure borders are collapsed */}
+          <TableHead className="bg3">
             <TableRow>
               <TableCell className="" sx={{ border: 'none' }}>Event Name</TableCell>
               <TableCell className="" sx={{ border: 'none' }}>Status</TableCell>

@@ -35,12 +35,12 @@
         margin-right: 16px; 
     }
     .segg {
-      background-color: #10B981 ;
+      background-color: #10B981 !important;
       color: #FFFFFF;
     }
     .gress{
-      background-color: #3B82F6;
-      height: 40px;        
+      background-color: #3B82F6 !important; 
+      height: 40px !important;        
       color: #FFFFFF;
 
     }
@@ -53,7 +53,8 @@
         width: 100% !important;
     }
     .mobilem {
-        margin-bottom: 113px !important;  
+        margin-bottom: 113px !important; 
+        width: 100%; 
     }
 }
 
